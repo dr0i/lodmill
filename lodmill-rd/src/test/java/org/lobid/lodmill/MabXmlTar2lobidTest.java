@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 import org.culturegraph.mf.Flux;
@@ -56,6 +57,7 @@ public final class MabXmlTar2lobidTest {
 		XmlEntitySplitter xmlEntitySplitter = new XmlEntitySplitter();
 		xmlEntitySplitter.setEntityName("ListRecords");
 		XmlFilenameWriter xmlFilenameWriter = createXmlFilenameWriter();
+
 		xmlTee.setReceiver(handler).setReceiver(morph).setReceiver(streamTee);
 		xmlTee.addReceiver(xmlEntitySplitter);
 		xmlEntitySplitter.setReceiver(xmlFilenameWriter);
@@ -64,7 +66,9 @@ public final class MabXmlTar2lobidTest {
 				.getAbsolutePath());
 		opener.closeStream();
 
-		final File testFile = concatenateGeneratedFilesIntoOneFile();
+		final File testFile =
+				concatenateGeneratedFilesIntoOneFile(TARGET_PATH + TARGET_SUBPATH,
+						TARGET_PATH + "/" + TEST_FILENAME);
 		// positive test
 		AbstractIngestTests.compareFiles(testFile, new File(Thread.currentThread()
 				.getContextClassLoader().getResource(TEST_FILENAME).toURI()));
@@ -73,41 +77,54 @@ public final class MabXmlTar2lobidTest {
 				testFile,
 				new File(Thread.currentThread().getContextClassLoader()
 						.getResource("hbz01negatives.ttl").toURI()));
-		testFile.deleteOnExit();
+		// testFile.deleteOnExit();
 	}
 
-	private static File concatenateGeneratedFilesIntoOneFile()
-			throws FileNotFoundException, IOException {
-		File parentPath = new File(TARGET_PATH + TARGET_SUBPATH);
-		final StringBuilder triples = new StringBuilder();
-		for (String directory : parentPath.list()) {
-			for (String filename : new File(parentPath + "/" + directory).list()) {
-				triples.append(getFileContent(new File(parentPath + "/" + directory
-						+ "/" + filename)));
-			}
-		}
-		final File testFile = new File(TARGET_PATH + "/" + TEST_FILENAME);
+	// static StringBuilder triples = new StringBuilder();
+	static HashSet<String> triples = new HashSet<String>();
+
+	static File concatenateGeneratedFilesIntoOneFile(String sourcePath,
+			String targetFilename) throws FileNotFoundException, IOException {
+		concatenateGeneratedFiles(sourcePath, targetFilename);
+		final File testFile = new File(targetFilename);
 		final FileOutputStream fos = new FileOutputStream(testFile);
-		fos.write(triples.toString().getBytes());
+		StringBuilder sb = new StringBuilder();
+		for (String str : triples) {
+			sb.append(str);
+		}
+		fos.write(sb.toString().getBytes());
 		fos.close();
 		return testFile;
 	}
 
-	private static String getFileContent(File file) {
-		StringBuilder ntriples = new StringBuilder();
+	private static void concatenateGeneratedFiles(String sourcePath,
+			String targetFilename) {
+		for (String file : (new File(sourcePath)).list()) {
+			if ((new File(sourcePath + file)).isDirectory()) {
+				concatenateGeneratedFiles(sourcePath + file + "/", targetFilename);
+			} else {
+				File toAppend = new File(sourcePath + "/" + file);
+				if (toAppend.isFile()) {
+					getFileContent(toAppend);
+				}
+			}
+		}
+
+	}
+
+	private static void getFileContent(File file) {
 		Scanner scanner = null;
 		try {
 			scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
 				final String actual = scanner.nextLine();
 				if (!actual.isEmpty()) {
-					ntriples.append(actual + "\n");
+					triples.add(actual + "\n");
 				}
 			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return ntriples.toString();
 	}
 
 	private static XmlFilenameWriter createXmlFilenameWriter() {
