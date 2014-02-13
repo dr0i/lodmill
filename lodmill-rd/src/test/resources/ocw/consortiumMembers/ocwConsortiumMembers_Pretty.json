@@ -1,0 +1,1984 @@
+{
+   "Organizational Members" : [
+      {
+         "membership_status" : "Current",
+         "name" : "9x9",
+         "associate_consortium" : "",
+         "id" : 472,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 541,
+         "membership_type" : "Organizational Members - DC",
+         "membership_status" : "Current",
+         "name" : "ABED - Brazilian Association for Distance Education"
+      },
+      {
+         "name" : "Academica",
+         "membership_status" : "Current",
+         "id" : 602,
+         "membership_type" : "Organizational Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "AcrossWorld Education",
+         "associate_consortium" : "",
+         "id" : 416,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "AIU High School",
+         "associate_consortium" : "",
+         "id" : 575,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "APTIKOM OCWC Indonesia",
+         "associate_consortium" : "",
+         "id" : 248,
+         "membership_type" : "Organizational Members - DC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "BCcampus",
+         "associate_consortium" : "",
+         "id" : 581,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "id" : 588,
+         "membership_type" : "Organizational Members - DC",
+         "associate_consortium" : "",
+         "name" : "BS Grupo SAC",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Cerego",
+         "associate_consortium" : "",
+         "membership_type" : "Organizational Members",
+         "id" : 261
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Cogi, Inc.",
+         "associate_consortium" : "",
+         "id" : 493,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "membership_type" : "Organizational Members - DC",
+         "id" : 494,
+         "associate_consortium" : "",
+         "name" : "Colegio Visconde de Porto Seguro",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Comisión Internacional Asesora de Ciencia y Tecnología (CIACT)",
+         "membership_status" : "Current",
+         "id" : 418,
+         "membership_type" : "Organizational Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Commonwealth of Learning (COL)",
+         "membership_status" : "Grace",
+         "id" : 228,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 205,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "Connexions"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 227,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "Creative Commons"
+      },
+      {
+         "membership_type" : "Organizational Members",
+         "id" : 523,
+         "associate_consortium" : "",
+         "name" : "Crossborder Education Solutions",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 232,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "enPraxis"
+      },
+      {
+         "name" : "Escuela de Empresas USFQ",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members - DC",
+         "id" : 471,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Organizational Members - DC",
+         "id" : 475,
+         "associate_consortium" : "",
+         "name" : "Escuela Virtual de Deportes",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "European Association of Distance Teaching Universities (EADTU)",
+         "membership_status" : "Current",
+         "id" : 235,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 579,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "GUIDE - Global Universities in Distance Education"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Hong Kong Cyberport Management Company Limited",
+         "associate_consortium" : "",
+         "id" : 439,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 504,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "Hudong.com Inc."
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "iBerry",
+         "associate_consortium" : "",
+         "id" : 209,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Organizational Members - DC",
+         "id" : 594,
+         "membership_status" : "Current",
+         "name" : "Instituto Israelita de Ensino e Pesquisa Albert Einstein"
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Organizational Members - DC",
+         "id" : 531,
+         "membership_status" : "Current",
+         "name" : "Instituto Latinoamericano de la Comunicación Educativa (ILCE)"
+      },
+      {
+         "name" : "Intelligent Television",
+         "membership_status" : "Grace",
+         "id" : 217,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Pending",
+         "name" : "iversity",
+         "associate_consortium" : "",
+         "membership_type" : "Organizational Members",
+         "id" : 609
+      },
+      {
+         "membership_type" : "Organizational Members",
+         "id" : 407,
+         "associate_consortium" : "",
+         "name" : "JISC",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Jozef Stefan Institute",
+         "associate_consortium" : "",
+         "id" : 589,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "membership_type" : "Organizational Members - DC",
+         "id" : 272,
+         "associate_consortium" : "",
+         "name" : "Kenfuse.com",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Korea Education & Research Information Service",
+         "membership_status" : "Current",
+         "id" : 208,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "LearningCounts.org",
+         "associate_consortium" : "",
+         "id" : 524,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 386,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "MEITAL- Inter-University Center for e-Learning -  Israel"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 237,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "MERLOT - Multimedia Educational Resource for Learning and Online Teaching"
+      },
+      {
+         "name" : "Monterey Institute for Technology and Education",
+         "membership_status" : "Current",
+         "id" : 224,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Organizational Members",
+         "id" : 554,
+         "associate_consortium" : "",
+         "name" : "National Council for Science and the Environment",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Netease Information Technology (Beijing) Co., Ltd.",
+         "membership_status" : "Sustaining",
+         "membership_type" : "Organizational Members",
+         "id" : 447,
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 425,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : "",
+         "name" : "NIXTY",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 226,
+         "membership_type" : "Organizational Members - DC",
+         "membership_status" : "Current",
+         "name" : "OER Africa"
+      },
+      {
+         "id" : 222,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : "",
+         "name" : "OOPS",
+         "membership_status" : "Current"
+      },
+      {
+         "id" : 202,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : "",
+         "name" : "Open High School of Utah",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Open Learning Exchange",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members",
+         "id" : 220,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "OpenStudy",
+         "membership_status" : "Current",
+         "id" : 455,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Organisation internationale de la Francophonie",
+         "associate_consortium" : "",
+         "id" : 605,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Peer 2 Peer University (P2PU)",
+         "associate_consortium" : "",
+         "id" : 477,
+         "membership_type" : "Organizational Members"
+      },
+      {
+         "name" : "Prepr Foundation",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members",
+         "id" : 593,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Saint Nuno University (Foundation)",
+         "membership_status" : "Current",
+         "id" : 442,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 511,
+         "membership_type" : "Organizational Members",
+         "associate_consortium" : "",
+         "name" : "SASAC Education and Training Centre Education Network",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Shahid Beheshti University",
+         "membership_status" : "Current",
+         "id" : 243,
+         "membership_type" : "Organizational Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Organizational Members",
+         "id" : 528,
+         "membership_status" : "Current",
+         "name" : "SURF"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 270,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "Teachers Without Borders"
+      },
+      {
+         "name" : "The Higher Education Academy (HEA)",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members",
+         "id" : 438,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "The Khronos Group Inc.",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members",
+         "id" : 443,
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 457,
+         "membership_type" : "Organizational Members",
+         "membership_status" : "Current",
+         "name" : "The Saylor Foundation"
+      },
+      {
+         "name" : "University of the People",
+         "membership_status" : "Current",
+         "membership_type" : "Organizational Members",
+         "id" : 277,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Organizational Members",
+         "id" : 369,
+         "associate_consortium" : "",
+         "name" : "Utah State University",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Yao Rui Education Information Inc.",
+         "associate_consortium" : "",
+         "id" : 453,
+         "membership_type" : "Organizational Members"
+      }
+   ],
+   "Institutions of Higher Education" : [
+      {
+         "id" : 372,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : "",
+         "name" : "AGH University of Science and Technology",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "American Public University System",
+         "associate_consortium" : "CCCOER",
+         "id" : 598,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "name" : "Ankara University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 190,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 521,
+         "associate_consortium" : "CCCOER",
+         "name" : "Anne Arundel Community College",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 33,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "Arizona State University"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 124,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "Athabasca University"
+      },
+      {
+         "id" : 102,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : "",
+         "name" : "Bahá’í Institute for Higher Education",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Pending",
+         "name" : "Beijing Normal University",
+         "associate_consortium" : "CORE",
+         "id" : 526,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 600,
+         "associate_consortium" : "CCCOER",
+         "name" : "Broward College",
+         "membership_status" : "Current"
+      },
+      {
+         "id" : 466,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC",
+         "name" : "CATHOLIC UNIVERSITY OF DAEGU",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Cerritos College",
+         "membership_status" : "Current",
+         "id" : 544,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 556,
+         "membership_type" : "Institutional Members - DC",
+         "membership_status" : "Current",
+         "name" : "Chalerm Kanchana University"
+      },
+      {
+         "membership_status" : "Pending",
+         "name" : "Chattanooga State Comunity College",
+         "associate_consortium" : "CCCOER",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 619
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 543,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Chung Hua University"
+      },
+      {
+         "associate_consortium" : "CCCOER",
+         "id" : 617,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Pending",
+         "name" : "College of Southern Maryland"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "College of the Canyons",
+         "associate_consortium" : "CCCOER",
+         "id" : 532,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "associate_consortium" : "CCCOER",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 603,
+         "membership_status" : "Current",
+         "name" : "Cuyahoga Community College"
+      },
+      {
+         "name" : "Dalian University of Technology",
+         "membership_status" : "Grace",
+         "id" : 519,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "CORE"
+      },
+      {
+         "associate_consortium" : "CCCOER",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 620,
+         "membership_status" : "Pending",
+         "name" : "Delaware Technical Community College"
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 557,
+         "membership_status" : "Pending",
+         "name" : "Dong-A University"
+      },
+      {
+         "associate_consortium" : "JOCWC",
+         "id" : 84,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Doshisha University"
+      },
+      {
+         "associate_consortium" : "Turkish OCWC",
+         "membership_type" : "Institutional Members - DC - MRC",
+         "id" : 549,
+         "membership_status" : "Current",
+         "name" : "Eastern Mediterranean University"
+      },
+      {
+         "name" : "EduNet Vietnam",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 50,
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 62,
+         "membership_type" : "Institutional Members - DC",
+         "membership_status" : "Current",
+         "name" : "ESAGS -Escola Superior de Administração e Gestão"
+      },
+      {
+         "name" : "EWHA WOMANS UNIVERSITY",
+         "membership_status" : "Current",
+         "id" : 458,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Excelsior College",
+         "associate_consortium" : "",
+         "id" : 564,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "name" : "Fu Jen Catholic University",
+         "membership_status" : "Current",
+         "id" : 60,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Fundação Getulio Vargas - FGV Online",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 9
+      },
+      {
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 70,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Fundación Universitaria San Pablo CEU"
+      },
+      {
+         "name" : "Hallym University",
+         "membership_status" : "Current",
+         "id" : 167,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 41,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Handong Global University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Hanyang University",
+         "associate_consortium" : "",
+         "id" : 321,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Helsinki Metropolia University of Applied Sciences",
+         "associate_consortium" : "",
+         "id" : 459,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "name" : "Hokkaido University",
+         "membership_status" : "Current",
+         "id" : 151,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "name" : "Hosei University",
+         "membership_status" : "Current",
+         "id" : 411,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "id" : 539,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER",
+         "name" : "Houston Community College District",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Hungkuang University",
+         "membership_status" : "Current",
+         "id" : 489,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 105,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "IE University"
+      },
+      {
+         "membership_type" : "Institutional Members - DC",
+         "id" : 165,
+         "associate_consortium" : "",
+         "name" : "Indian Institute of Management Bangalore",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Instituto Tecnológico de Las Américas (ITLA)",
+         "membership_status" : "Current",
+         "id" : 109,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "membership_type" : "Institutional Members - DC",
+         "id" : 441,
+         "associate_consortium" : "",
+         "name" : "Instituto Tecnológico de Sonora",
+         "membership_status" : "Grace"
+      },
+      {
+         "name" : "International Christian University",
+         "membership_status" : "Current",
+         "id" : 409,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "IUI - Farabi Institute of Higher Education",
+         "associate_consortium" : "",
+         "id" : 99,
+         "membership_type" : "Institutional Members - DC"
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "id" : 547,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Jesus University"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Johns Hopkins Bloomberg School of Public Health",
+         "associate_consortium" : "",
+         "id" : 120,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Kabul Polytechnic University",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 38
+      },
+      {
+         "id" : 83,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC",
+         "name" : "Kagawa Nutrition University",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 81,
+         "associate_consortium" : "JOCWC",
+         "name" : "Kansai University",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Kaohsiung Medical University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 485,
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "name" : "Kaplan University Online & Campus Learning",
+         "membership_status" : "Grace",
+         "id" : 103,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Keio University",
+         "associate_consortium" : "JOCWC",
+         "id" : 128,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "King Fahd University of Petroleum & Minerals",
+         "associate_consortium" : "",
+         "id" : 108,
+         "membership_type" : "Institutional Members - DC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Kirkwood Community College",
+         "associate_consortium" : "CCCOER",
+         "id" : 501,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "name" : "KONYANG UNIVERSITY",
+         "membership_status" : "Current",
+         "id" : 463,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      },
+      {
+         "name" : "Korea University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 130,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Kun Shan University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 491,
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "id" : 412,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC",
+         "name" : "Kwansei Gakuin University",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Kyoto University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 100,
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 77,
+         "membership_status" : "Current",
+         "name" : "Kyung Hee Cyber University"
+      },
+      {
+         "id" : 138,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "",
+         "name" : "Kyung Hee University",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "JOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 150,
+         "membership_status" : "Current",
+         "name" : "Kyushu University"
+      },
+      {
+         "associate_consortium" : "CCCOER",
+         "id" : 553,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Lakeshore Technical College"
+      },
+      {
+         "name" : "Maricopa Community Colleges",
+         "membership_status" : "Current",
+         "id" : 561,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER"
+      },
+      {
+         "id" : 145,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "Massachusetts Institute of Technology",
+         "membership_status" : "Sustaining"
+      },
+      {
+         "name" : "Meiji University",
+         "membership_status" : "Current",
+         "id" : 80,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "name" : "Michigan State University",
+         "membership_status" : "Current",
+         "id" : 135,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC - MRC",
+         "id" : 74,
+         "membership_status" : "Current",
+         "name" : "Middle East Technical University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "MOSCOW ARCHITECTURAL INSTITUTE",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 445
+      },
+      {
+         "id" : 101,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC",
+         "name" : "Nagoya University",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 479,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "National Central University"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 75,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "National Chengchi University"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 46,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "National Cheng Kung University"
+      },
+      {
+         "name" : "National Chiao Tung University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 146,
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "National Chung Hsing University",
+         "associate_consortium" : "TOCWC",
+         "id" : 481,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "id" : 484,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC",
+         "name" : "National Dong Hwa University",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "National Hsinchu University of Education",
+         "membership_status" : "Current",
+         "id" : 483,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 595,
+         "membership_status" : "Current",
+         "name" : "National Ilan University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "National Open University",
+         "associate_consortium" : "TOCWC",
+         "id" : 500,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Grace",
+         "name" : "NATIONAL OPEN UNIVERSITY OF NIGERIA",
+         "associate_consortium" : "",
+         "id" : 431,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "id" : 515,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC",
+         "name" : "National Pingtung University of Science and Technology",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 65,
+         "membership_status" : "Current",
+         "name" : "National Sun Yat-Sen University"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 59,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "National Taiwan Normal University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "National Taiwan Ocean University",
+         "associate_consortium" : "TOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 486
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 480,
+         "membership_status" : "Current",
+         "name" : "National Taiwan University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "National Taiwan University of Science and Technology",
+         "associate_consortium" : "TOCWC",
+         "id" : 69,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 107,
+         "associate_consortium" : "TOCWC",
+         "name" : "National Tsing Hua University",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 616,
+         "membership_status" : "Pending",
+         "name" : "Neusoft Institute of Information, Nanhai"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 380,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "New Jersey Institute of Technology"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 435,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "Northeastern State University"
+      },
+      {
+         "id" : 569,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER",
+         "name" : "Northern Virginia Community College - Extended Learning Institute",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Open University Netherlands",
+         "associate_consortium" : "",
+         "id" : 112,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "associate_consortium" : "CCCOER",
+         "membership_type" : "Institutional Members",
+         "id" : 552,
+         "membership_status" : "Current",
+         "name" : "Oregon Community College Distance Learning Association"
+      },
+      {
+         "associate_consortium" : "JOCWC",
+         "id" : 129,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Osaka University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Pasadena City College",
+         "associate_consortium" : "CCCOER",
+         "id" : 538,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "People's Open Access Education Initiative",
+         "associate_consortium" : "",
+         "id" : 152,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 527,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "Politeknik Negeri Padang"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 573,
+         "membership_type" : "Institutional Members - DC",
+         "membership_status" : "Current",
+         "name" : "Pontifical Catholic University of Rio de Janeiro - PUC Rio"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Pontificia Universidad Catolica de Chile",
+         "associate_consortium" : "",
+         "id" : 21,
+         "membership_type" : "Institutional Members - DC - MRC"
+      },
+      {
+         "name" : "Providence University",
+         "membership_status" : "Current",
+         "id" : 482,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "TOCWC"
+      },
+      {
+         "id" : 43,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "",
+         "name" : "Pusan National University",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Qassim university College of Medicine",
+         "membership_status" : "Grace",
+         "id" : 17,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 496,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER",
+         "name" : "Queensborough Community College",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Ritsumeikan Asia Pacific University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 78,
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "name" : "Ritsumeikan University",
+         "membership_status" : "Current",
+         "id" : 86,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 566,
+         "associate_consortium" : "CCCOER",
+         "name" : "Roane State Community College",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "San Diego Community College District",
+         "membership_status" : "Current",
+         "id" : 502,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "CCCOER"
+      },
+      {
+         "name" : "SEMYUNG UNIVERSITY",
+         "membership_status" : "Current",
+         "id" : 469,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      },
+      {
+         "id" : 614,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "KOCWC",
+         "name" : "SeoulTech",
+         "membership_status" : "Pending"
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "id" : 461,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "SEOULWOMENS UNIVERSITY"
+      },
+      {
+         "membership_type" : "Institutional Members",
+         "id" : 474,
+         "associate_consortium" : "",
+         "name" : "Shanghai Jiaotong University(SJTU)",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "id" : 158,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Silla University"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Soochow University",
+         "associate_consortium" : "TOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 376
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 460,
+         "membership_status" : "Current",
+         "name" : "SOOKMYUNG WOMEN\"S UNIVERSITY"
+      },
+      {
+         "name" : "Sophia University",
+         "membership_status" : "Current",
+         "id" : 437,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "id" : 164,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : "",
+         "name" : "South East European University (SEE University)",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "TOCWC",
+         "id" : 488,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Southern Taiwan University"
+      },
+      {
+         "id" : 536,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "State University of New York  Empire State College",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Sterling College",
+         "membership_status" : "Current",
+         "id" : 510,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Stockholm university",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members",
+         "id" : 597,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 467,
+         "associate_consortium" : "KOCWC",
+         "name" : "SUNGKYUNKWAN UNIVERSITY",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Taipei Medical University",
+         "associate_consortium" : "TOCWC",
+         "id" : 31,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Tecnológico de Monterrey",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC - MRC",
+         "id" : 143
+      },
+      {
+         "membership_status" : "Pending",
+         "name" : "Telecom Bretagne",
+         "associate_consortium" : "FOCW",
+         "membership_type" : "Institutional Members",
+         "id" : 610
+      },
+      {
+         "name" : "THE CATHOLIC UNIVERSITY OF KOREA",
+         "membership_status" : "Current",
+         "id" : 468,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "The Open University",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 139
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 1,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "The Open University of Israel"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "The Open University of Japan",
+         "associate_consortium" : "JOCWC",
+         "id" : 413,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "name" : "The University of Nottingham",
+         "membership_status" : "Current",
+         "id" : 13,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Tokyo Institute of Technology",
+         "membership_status" : "Current",
+         "id" : 98,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "id" : 147,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "TU Delft",
+         "membership_status" : "Sustaining"
+      },
+      {
+         "membership_type" : "Institutional Members",
+         "id" : 117,
+         "associate_consortium" : "",
+         "name" : "Tufts University",
+         "membership_status" : "Sustaining"
+      },
+      {
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 450,
+         "membership_status" : "Example",
+         "name" : "Tutorial University"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 133,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "UC Berkeley"
+      },
+      {
+         "associate_consortium" : "KOCWC",
+         "id" : 512,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Ulsan National Institute of Science and Technology (UNIST)"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "ULSAN UNIVERSITY",
+         "associate_consortium" : "KOCWC",
+         "id" : 464,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Autónoma de Madrid",
+         "associate_consortium" : "",
+         "id" : 35,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Carlos III de Madrid",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 134
+      },
+      {
+         "name" : "Universidad Central de Venezuela",
+         "membership_status" : "Grace",
+         "id" : 136,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 91,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Universidad de Alicante"
+      },
+      {
+         "id" : 424,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA",
+         "name" : "Universidad de Cádiz",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad de Cantabria",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 36
+      },
+      {
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 125,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Universidad de Castilla-La Mancha"
+      },
+      {
+         "id" : 32,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "",
+         "name" : "Universidad de Deusto",
+         "membership_status" : "Current"
+      },
+      {
+         "id" : 8,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA",
+         "name" : "Universidad de Granada",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Universidad de La Laguna",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 68,
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 417,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "membership_status" : "Current",
+         "name" : "Universidad del Valle - Colombia"
+      },
+      {
+         "name" : "Universidad de Malaga",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 29,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Institutional Members - DC - MRC",
+         "id" : 47,
+         "associate_consortium" : "",
+         "name" : "Universidad de Monterrey",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 90,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Universidad de Murcia"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad de Navarra",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 49
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 153,
+         "associate_consortium" : "",
+         "name" : "Universidad de Oviedo",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Grace",
+         "name" : "Universidad de Puerto Rico",
+         "associate_consortium" : "",
+         "id" : 27,
+         "membership_type" : "Institutional Members - DC - MRC"
+      },
+      {
+         "name" : "Universidad de Salamanca",
+         "membership_status" : "Current",
+         "id" : 95,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Universidad de Sevilla",
+         "membership_status" : "Current",
+         "id" : 54,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 92,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Current",
+         "name" : "Universidad de Valladolid"
+      },
+      {
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 127,
+         "associate_consortium" : "",
+         "name" : "Universidad de Zaragoza",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Grace",
+         "name" : "Universidade de Santiago de Compostela",
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 10,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "name" : "Universidade do Sul de Santa Catarina (UNISUL)",
+         "membership_status" : "Current",
+         "id" : 371,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 71,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : "",
+         "name" : "Universidad Estatal a Distancia",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Universidad Icesi",
+         "membership_status" : "Current",
+         "id" : 14,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "membership_status" : "Grace",
+         "name" : "Universidad Industrial de Santander",
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 67,
+         "membership_type" : "Institutional Members - DC - MRC"
+      },
+      {
+         "name" : "Universidad Interamericana de Puerto Rico",
+         "membership_status" : "Current",
+         "id" : 34,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 7,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA",
+         "name" : "Universidad Internacional de Andalucí­a",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 599,
+         "membership_type" : "Institutional Members - MRC",
+         "membership_status" : "Pending",
+         "name" : "Universidad Internacional de la Rioja - UNIR"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 574,
+         "membership_type" : "Institutional Members - DC",
+         "membership_status" : "Current",
+         "name" : "Universidad Itaca"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Nacional Agraria La Molina",
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 596,
+         "membership_type" : "Institutional Members - DC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Nacional Autónoma de México",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 537
+      },
+      {
+         "name" : "Universidad Nacional de Colombia",
+         "membership_status" : "Current",
+         "id" : 51,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Universidad Nacional de Educacion a Distancia",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 88,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Universidad Nacional Experimental del Táchira",
+         "membership_status" : "Grace",
+         "id" : 4,
+         "membership_type" : "Institutional Members - DC - MRC",
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "name" : "Universidad Politécnica de Cartagena",
+         "membership_status" : "Current",
+         "id" : 451,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Politécnica de Valencia",
+         "associate_consortium" : "",
+         "id" : 53,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Universidad Politécnica Madrid",
+         "associate_consortium" : "",
+         "id" : 89,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universidad Técnica Particular de Loja",
+         "associate_consortium" : "UNIVERSIA",
+         "membership_type" : "Institutional Members - DC - MRC",
+         "id" : 497
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 578,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "Università degli Studi Guglielmo Marconi"
+      },
+      {
+         "name" : "Universitas Indonesia",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 408,
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universitas Terbuka (Indonesian Open University)",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 568
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universitat Autònoma de Barcelona",
+         "associate_consortium" : "UNIVERSIA",
+         "id" : 15,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "id" : 52,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA",
+         "name" : "Universitat de Girona",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Universitat de les Illes Balears",
+         "membership_status" : "Current",
+         "id" : 57,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "id" : 506,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "UNIVERSIA",
+         "name" : "Universitat de Lleida",
+         "membership_status" : "Current"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universitat de Valéncia",
+         "associate_consortium" : "",
+         "id" : 55,
+         "membership_type" : "Institutional Members - MRC"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "Universitat Oberta de Catalunya",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 121
+      },
+      {
+         "name" : "Universitat Politècnica de Catalunya. BarcelonaTech (UPC)",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 550,
+         "associate_consortium" : "UNIVERSIA"
+      },
+      {
+         "name" : "Universitat Rovira i Virgili",
+         "membership_status" : "Current",
+         "id" : 37,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Institutional Members",
+         "id" : 72,
+         "associate_consortium" : "FOCW",
+         "name" : "Université de Lyon",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Universiti Teknologi Malaysia",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members",
+         "id" : 444,
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 132,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "University of California, Irvine",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "University of Cape Town",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - DC",
+         "id" : 404,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "University of Leuven (KU Leuven) ",
+         "membership_status" : "Current",
+         "id" : 558,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "University of Malaya",
+         "membership_status" : "Current",
+         "id" : 427,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "University of Maryland University College",
+         "associate_consortium" : "",
+         "id" : 591,
+         "membership_type" : "Institutional Members"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 48,
+         "membership_type" : "Institutional Members",
+         "membership_status" : "Current",
+         "name" : "University of Massachusetts Boston"
+      },
+      {
+         "id" : 123,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "University of Michigan",
+         "membership_status" : "Sustaining"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "University of Notre Dame",
+         "associate_consortium" : "",
+         "membership_type" : "Institutional Members",
+         "id" : 118
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "UNIVERSITY OF SEOUL",
+         "associate_consortium" : "KOCWC",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 465
+      },
+      {
+         "id" : 113,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "University of Southern Queensland",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "University of Sumatera Utara",
+         "membership_status" : "Current",
+         "id" : 406,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "University of the Western Cape",
+         "membership_status" : "Current",
+         "id" : 114,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "University of Tokyo",
+         "membership_status" : "Current",
+         "id" : 119,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "name" : "University of Tsukuba",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 79,
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "id" : 154,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "University of Wisconsin- Eau Claire",
+         "membership_status" : "Current"
+      },
+      {
+         "id" : 434,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : "",
+         "name" : "VIA University College - Denmark",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Virtual University of Pakistan",
+         "membership_status" : "Current",
+         "id" : 428,
+         "membership_type" : "Institutional Members",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Waseda University",
+         "membership_status" : "Current",
+         "membership_type" : "Institutional Members - MRC",
+         "id" : 141,
+         "associate_consortium" : "JOCWC"
+      },
+      {
+         "name" : "West Coast University (WCU) Panama",
+         "membership_status" : "Current",
+         "id" : 565,
+         "membership_type" : "Institutional Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "YONSEI UNIVERSITY",
+         "membership_status" : "Current",
+         "id" : 462,
+         "membership_type" : "Institutional Members - MRC",
+         "associate_consortium" : "KOCWC"
+      }
+   ],
+   "Associate Consortia" : [
+      {
+         "name" : "African Virtual University",
+         "membership_status" : "Sustaining",
+         "id" : 432,
+         "membership_type" : "Associate Consortium Members",
+         "associate_consortium" : ""
+      },
+      {
+         "membership_type" : "Associate Consortium Members - DC",
+         "id" : 546,
+         "associate_consortium" : "",
+         "name" : "Ankabut, The UAE Advanced Network for Research & Education",
+         "membership_status" : "Pending"
+      },
+      {
+         "membership_status" : "Current",
+         "name" : "China Education and Research Network",
+         "associate_consortium" : "",
+         "id" : 606,
+         "membership_type" : "Associate Consortium Members"
+      },
+      {
+         "membership_type" : "Associate Consortium Members",
+         "id" : 448,
+         "associate_consortium" : "",
+         "name" : "Community College Consortium for Open Educational Resources (CCCOER)",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "Facultad de Medicina de la Universidad Nacional Mayor de San Marcos",
+         "membership_status" : "Current",
+         "membership_type" : "Associate Consortium Members - DC",
+         "id" : 601,
+         "associate_consortium" : ""
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 584,
+         "membership_type" : "Associate Consortium Members",
+         "membership_status" : "Current",
+         "name" : "Greek Academic Network OCW / OER Consortium"
+      },
+      {
+         "membership_status" : "Sustaining",
+         "name" : "Japan OCW Consortium",
+         "associate_consortium" : "",
+         "membership_type" : "Associate Consortium Members",
+         "id" : 370
+      },
+      {
+         "name" : "Korea OCW Consortium",
+         "membership_status" : "Sustaining",
+         "membership_type" : "Associate Consortium Members",
+         "id" : 262,
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 577,
+         "membership_type" : "Associate Consortium Members",
+         "associate_consortium" : "",
+         "name" : "OCWFrance",
+         "membership_status" : "Current"
+      },
+      {
+         "id" : 206,
+         "membership_type" : "Associate Consortium Members",
+         "associate_consortium" : "",
+         "name" : "Paris Tech",
+         "membership_status" : "Current"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 213,
+         "membership_type" : "Associate Consortium Members",
+         "membership_status" : "Sustaining",
+         "name" : "Taiwan OpenCourseWare Consortium"
+      },
+      {
+         "id" : 490,
+         "membership_type" : "Associate Consortium Members",
+         "associate_consortium" : "",
+         "name" : "The  Research Council of Oman",
+         "membership_status" : "Current"
+      },
+      {
+         "name" : "TPED - Thomas Edison Grants Program Consortium",
+         "membership_status" : "Current",
+         "membership_type" : "Associate Consortium Members",
+         "id" : 419,
+         "associate_consortium" : ""
+      },
+      {
+         "name" : "Turkish OpenCourseWare Consortium",
+         "membership_status" : "Current",
+         "id" : 214,
+         "membership_type" : "Associate Consortium Members - DC",
+         "associate_consortium" : ""
+      },
+      {
+         "id" : 215,
+         "membership_type" : "Associate Consortium Members",
+         "associate_consortium" : "",
+         "name" : "UNIVERSIA",
+         "membership_status" : "Sustaining"
+      }
+   ],
+   "Corporate Members" : [
+      {
+         "membership_status" : "Current",
+         "name" : "Cisco Systems Australia Pty Ltd",
+         "associate_consortium" : "",
+         "id" : 562,
+         "membership_type" : "Corporate Members - Basic"
+      },
+      {
+         "associate_consortium" : "",
+         "id" : 604,
+         "membership_type" : "Corporate Members - Basic",
+         "membership_status" : "Current",
+         "name" : "Intellian Technologies"
+      }
+   ]
+}
