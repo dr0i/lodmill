@@ -37,6 +37,8 @@ import org.lobid.lodmill.hadoop.CollectSubjects.CollectSubjectsMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hp.hpl.jena.graph.Triple;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -94,12 +96,15 @@ public class NTriplesToJsonLd implements Tool {
 
 	private void createJobConfig(String[] args) {
 		conf = getConf();
+		final String indexName = args[3];
+		final String mapFileName = CollectSubjects.mapFileName(indexName);
 		conf.setStrings("mapred.textoutputformat.separator", NEWLINE);
 		conf.setStrings("target.subject.prefix", args[5]);
-		conf.set(INDEX_NAME, args[3]);
+		conf.setStrings("map.file.name", mapFileName);
+		conf.set(INDEX_NAME, indexName);
 		conf.set(INDEX_TYPE, args[4]);
-		DistributedCache.addCacheFile(new Path(args[1] + "/"
-				+ CollectSubjects.MAP_FILE_ZIP).toUri(), conf);
+		DistributedCache.addCacheFile(
+				new Path(args[1] + "/" + mapFileName + ".zip").toUri(), conf);
 	}
 
 	/**
@@ -122,17 +127,18 @@ public class NTriplesToJsonLd implements Tool {
 			final Path[] localCacheFiles =
 					DistributedCache.getLocalCacheFiles(context.getConfiguration());
 			if (localCacheFiles != null && localCacheFiles.length == 1)
-				initMapFileReader(localCacheFiles[0]);
+				initMapFileReader(localCacheFiles[0], context);
 			else
 				LOG.warn("No subjects cache files found!");
 		}
 
-		private void initMapFileReader(final Path zipFile) throws IOException,
-				FileNotFoundException {
-			unzip(zipFile.toString(), CollectSubjects.MAP_FILE_NAME);
+		private void initMapFileReader(final Path zipFile, final Context context)
+				throws IOException, FileNotFoundException {
+			unzip(zipFile.toString(), context.getConfiguration().get("map.file.name"));
 			reader =
-					new MapFile.Reader(CollectSubjects.getFileSystem(),
-							CollectSubjects.MAP_FILE_NAME, CollectSubjects.MAP_FILE_CONFIG);
+					new MapFile.Reader(CollectSubjects.getFileSystem(context
+							.getConfiguration()), context.getConfiguration().get(
+							"map.file.name"), CollectSubjects.MAP_FILE_CONFIG);
 		}
 
 		private static void unzip(final String zipFile, final String outputFolder)
@@ -153,9 +159,12 @@ public class NTriplesToJsonLd implements Tool {
 		@Override
 		public void map(final LongWritable key, final Text value,
 				final Context context) throws IOException, InterruptedException {
-			final Triple triple = CollectSubjectsMapper.asTriple(value.toString());
+			final String val = value.toString().trim();
+			if (val.isEmpty())
+				return;
+			final Triple triple = CollectSubjectsMapper.asTriple(val);
 			if (triple != null)
-				mapSubjectsToTheirTriples(value, context, value.toString(), triple);
+				mapSubjectsToTheirTriples(value, context, val, triple);
 		}
 
 		private void mapSubjectsToTheirTriples(final Text value,
@@ -213,9 +222,14 @@ public class NTriplesToJsonLd implements Tool {
 			final String triples = concatTriples(values);
 			final String jsonLd =
 					new JsonLdConverter(Format.N_TRIPLE).toJsonLd(triples);
+			final JsonNode node =
+					new ObjectMapper().readValue(jsonLd, JsonNode.class);
+			final JsonNode parent =
+					node.findValue(CollectSubjects.PARENTS.iterator().next());
 			context.write(
 					// write both with JSONValue for consistent escaping:
-					new Text(JSONValue.toJSONString(createIndexMap(key, context))),
+					new Text(JSONValue.toJSONString(createIndexMap(key, context,
+							parent != null ? parent.findValue("@id").asText() : null))),
 					new Text(JSONValue.toJSONString(JSONValue.parse(jsonLd))));
 		}
 
@@ -247,11 +261,14 @@ public class NTriplesToJsonLd implements Tool {
 		}
 
 		private static Map<String, Map<?, ?>> createIndexMap(final Text key,
-				final Context context) {
+				final Context context, final String parent) {
 			final Map<String, String> map = new HashMap<>();
 			map.put("_index", context.getConfiguration().get(INDEX_NAME));
 			map.put("_type", context.getConfiguration().get(INDEX_TYPE));
-			map.put("_id", key.toString().substring(1, key.getLength() - 1));
+			map.put("_id", key.toString().substring(1, key.toString().length() - 1));
+			if (context.getConfiguration().get(INDEX_TYPE)
+					.equals("json-ld-lobid-item"))
+				map.put("_parent", parent != null ? parent : "none");
 			final Map<String, Map<?, ?>> index = new HashMap<>();
 			index.put("index", map);
 			return index;

@@ -2,28 +2,26 @@
 
 package models;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
-import org.json.simple.JSONValue;
 import org.lobid.lodmill.JsonLdConverter;
 import org.lobid.lodmill.JsonLdConverter.Format;
 
 import play.Logger;
-import play.Play;
 import play.libs.Json;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.github.jsonldjava.core.JSONLD;
-import com.github.jsonldjava.core.JSONLDProcessingError;
+import com.github.jsonldjava.core.JsonLdProcessor;
+import com.github.jsonldjava.core.JsonLdError;
+import com.github.jsonldjava.core.JsonLdOptions;
 import com.github.jsonldjava.utils.JSONUtils;
+import com.google.common.collect.ImmutableMap;
 import com.hp.hpl.jena.shared.BadURIException;
 
 /**
@@ -50,17 +48,15 @@ public class Document {
 	 */
 	public String getSource() {
 		try {
-			final Pair<URL, String> localAndPublicContextUrls = getContextUrls();
-			final Map<String, Object> contextObject =
-					(Map<String, Object>) JSONUtils.fromURL(localAndPublicContextUrls
-							.getLeft());
+			final Pair<URL, String> localAndPublicContextUrls = index.context();
 			final Map<String, Object> compactJsonLd =
-					(Map<String, Object>) JSONLD.compact(JSONUtils.fromString(source),
-							contextObject);
+					sourceAsCompactJsonLd((Map<String, Object>) JSONUtils
+							.fromURL(localAndPublicContextUrls.getLeft()));
 			compactJsonLd.put("@context", localAndPublicContextUrls.getRight());
+			compactJsonLd.put("primaryTopic", id);
 			final String result = JSONUtils.toString(compactJsonLd);
 			return this.field.isEmpty() ? result : findField(result);
-		} catch (JSONLDProcessingError | IOException e) {
+		} catch (JsonLdError | IOException e) {
 			e.printStackTrace();
 			return null;
 		}
@@ -80,14 +76,41 @@ public class Document {
 	 */
 	public String getSourceWithFullProperties() {
 		try {
-			final Object compactJsonLd =
-					JSONLD.compact(JSONUtils.fromString(source),
-							new HashMap<String, Object>());
-			return JSONUtils.toString(compactJsonLd);
-		} catch (JSONLDProcessingError | IOException e) {
+			final Map<String, Object> jsonLd =
+					sourceAsCompactJsonLd(new HashMap<String, Object>());
+			jsonLd.put("http://xmlns.com/foaf/0.1/primaryTopic",
+					ImmutableMap.of("@id", id));
+			return JSONUtils.toString(jsonLd);
+		} catch (JsonLdError | IOException e) {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	private Map<String, Object> sourceAsCompactJsonLd(
+			final Map<String, Object> contextObject) throws IOException,
+			JsonLdError {
+		final Map<String, Object> jsonLd =
+				wrappedIntoGraphIfMissing((Map<String, Object>) JsonLdProcessor.compact(
+						JSONUtils.fromString(source), contextObject, new JsonLdOptions()));
+		jsonLd.put("@id", id + "/about");
+		return jsonLd;
+	}
+
+	private static Map<String, Object> wrappedIntoGraphIfMissing(
+			final Map<String, Object> jsonLd) {
+		final String graphKey = "@graph";
+		final String contextKey = "@context";
+		if (!jsonLd.containsKey(graphKey)) {
+			final Map<String, Object> newJsonLd = new HashMap<>();
+			final Map<String, Object> graph = new HashMap<>();
+			newJsonLd.put(contextKey, jsonLd.get(contextKey));
+			jsonLd.remove(contextKey);
+			graph.putAll(jsonLd);
+			newJsonLd.put(graphKey, Arrays.asList(graph));
+			return newJsonLd;
+		}
+		return jsonLd;
 	}
 
 	/** @return The field that matched the query. */
@@ -116,7 +139,7 @@ public class Document {
 	 */
 	public String as(final Format format) { // NOPMD
 		final JsonLdConverter converter = new JsonLdConverter(format);
-		final String json = JSONValue.toJSONString(JSONValue.parse(source));
+		final String json = getSourceWithFullProperties();
 		String result = "";
 		try {
 			result = converter.toRdf(json);
@@ -124,19 +147,6 @@ public class Document {
 			Logger.error(x.getMessage(), x);
 		}
 		return result;
-	}
-
-	private Pair<URL, String> getContextUrls() throws MalformedURLException {
-		final String path = "public/contexts";
-		final String file = index.id() + ".json";
-		URL localContextResourceUrl =
-				Play.application().resource("/" + path + "/" + file);
-		if (localContextResourceUrl == null) // no app running, use plain local file
-			localContextResourceUrl = new File(path, file).toURI().toURL();
-		final String publicContextUrl =
-				"http://api.lobid.org"
-						+ controllers.routes.Assets.at("/" + path, file).url();
-		return new ImmutablePair<>(localContextResourceUrl, publicContextUrl);
 	}
 
 }

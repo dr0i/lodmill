@@ -3,6 +3,8 @@
 package org.lobid.lodmill;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Iterator;
@@ -63,48 +65,82 @@ public abstract class AbstractIngestTests {
 			final String generatedFileName,
 			final DefaultStreamPipe<ObjectReceiver<String>> dsp) {
 		setUpErrorHandler(metamorph);
-		final File actualFile = new File(generatedFileName);
-		process(dsp, actualFile);
+		final File generatedFile = new File(generatedFileName);
+		process(dsp, generatedFile);
 		File testFile;
 		try {
 			testFile =
 					new File(Thread.currentThread().getContextClassLoader()
 							.getResource(testFileName).toURI());
-			compareFiles(actualFile, testFile);
+			compareFilesDefaultingBNodes(generatedFile, testFile);
 		} catch (URISyntaxException e) {
 			LOG.error(e.getMessage(), e);
 		}
-
+		generatedFile.deleteOnExit();
 	}
 
-	/**
-	 * Tests if two files are of equal content.
-	 * 
-	 * @param actualFile the actually generated file
-	 * @param testFile the file which defines how the actualFile should look like
-	 */
-	public static void compareFiles(final File actualFile, final File testFile) {
-		Scanner actual = null;
-		Scanner expected = null;
+	private static SortedSet<String> linesInFileToSetDefaultingBNodes(
+			final File file) {
+		Scanner scanner = null;
+		SortedSet<String> set = null;
 		try {
-			expected = new Scanner(testFile);
-			actual = new Scanner(actualFile);
-			// Set necessary because the order of triples in the files may differ
-			final SortedSet<String> expectedSet = asSet(expected);
-			final SortedSet<String> actualSet = asSet(actual);
-			assertSetSize(expectedSet, actualSet);
-			assertSetElements(expectedSet, actualSet);
+			scanner = new Scanner(file);
+			set = asSet(scanner);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 		} finally {
-			if (actual != null) {
-				actual.close();
-			}
-			if (expected != null) {
-				expected.close();
+			if (scanner != null) {
+				scanner.close();
 			}
 		}
-		actualFile.deleteOnExit();
+		return set;
+	}
+
+	/**
+	 * Tests if two files are of equal content. As BNodes are not fix they are not
+	 * comparable and thus they are defaulted to "_:bnodeDummy" to make the files
+	 * comparable anyhow.
+	 * 
+	 * @param generatedFile the actually generated file
+	 * @param testFile the file which defines how the generatedFile should look
+	 *          like
+	 */
+	public static void compareFilesDefaultingBNodes(final File generatedFile,
+			final File testFile) {
+		assertSetSize(linesInFileToSetDefaultingBNodes(testFile),
+				linesInFileToSetDefaultingBNodes(generatedFile));
+		assertSetElements(linesInFileToSetDefaultingBNodes(generatedFile),
+				linesInFileToSetDefaultingBNodes(testFile));
+		generatedFile.deleteOnExit();
+	}
+
+	/**
+	 * Tests if content of one file is not part of the second file.
+	 * 
+	 * @param generatedFile the actually generated file
+	 * @param testFile the file which musn't have any lines also part of the
+	 *          generatedFile
+	 */
+	public static void checkIfNoIntersection(final File generatedFile,
+			final File testFile) {
+		assertSetNoIntersection(linesInFileToSetDefaultingBNodes(testFile),
+				linesInFileToSetDefaultingBNodes(generatedFile));
+	}
+
+	private static void assertSetNoIntersection(
+			final SortedSet<String> notExpectedSet, final SortedSet<String> actualSet) {
+		final Iterator<String> notExpectedIterator = notExpectedSet.iterator();
+		boolean assertionError = false;
+		for (int i = 0; i < notExpectedSet.size(); i++) {
+			String notExpected = notExpectedIterator.next();
+			if (actualSet.contains(notExpected)) {
+				LOG.error("Not expected: " + notExpected + " to be part of the data");
+				assertionError = true;
+			}
+		}
+		if (assertionError) {
+			throw new AssertionError();
+		}
 	}
 
 	private static void assertSetSize(final SortedSet<String> expectedSet,
@@ -120,8 +156,10 @@ public abstract class AbstractIngestTests {
 	private static SortedSet<String> asSet(final Scanner scanner) {
 		final SortedSet<String> set = new TreeSet<String>();
 		while (scanner.hasNextLine()) {
-			final String actual = scanner.nextLine();
+			String actual = scanner.nextLine();
 			if (!actual.isEmpty()) {
+				actual =
+						actual.replaceFirst("(^_:\\w* )|( _:\\w* ?.$)", "_:bnodeDummy ");
 				set.add(actual);
 			}
 		}
@@ -201,5 +239,59 @@ public abstract class AbstractIngestTests {
 				LOG.error(exception.getMessage(), exception);
 			}
 		});
+	}
+
+	public static File concatenateGeneratedFilesIntoOneFile(String targetPath,
+			String testFilename) throws FileNotFoundException, IOException {
+		StringBuilder triples = new StringBuilder();
+		concatenateGeneratedFilesIntoOneString(targetPath, triples);
+		File testFile = new File(testFilename);
+		if (triples.length() > 1) {
+			final FileOutputStream fos = new FileOutputStream(testFile);
+			fos.write(triples.toString().getBytes());
+			fos.close();
+		}
+		return testFile;
+	}
+
+	/**
+	 * 
+	 * @param targetPath the main path of the
+	 * @param subPath
+	 * @param testFilename
+	 * @return the File with the content of all teh other files
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private static StringBuilder concatenateGeneratedFilesIntoOneString(
+			String targetPath, StringBuilder triples) throws FileNotFoundException,
+			IOException {
+		File parentPath = new File(targetPath + "/");
+		for (String filename : parentPath.list()) {
+			File newFile = new File(parentPath + "/" + filename);
+			if (newFile.isDirectory())
+				concatenateGeneratedFilesIntoOneString(parentPath.getPath() + "/"
+						+ filename, triples);
+			else
+				triples.append(getFileContent(newFile));
+		}
+		return triples;
+	}
+
+	private static String getFileContent(File file) {
+		StringBuilder ntriples = new StringBuilder();
+		Scanner scanner = null;
+		try {
+			scanner = new Scanner(file);
+			while (scanner.hasNextLine()) {
+				final String actual = scanner.nextLine();
+				if (!actual.isEmpty()) {
+					ntriples.append(actual + "\n");
+				}
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return ntriples.toString();
 	}
 }

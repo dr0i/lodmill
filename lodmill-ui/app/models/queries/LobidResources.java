@@ -52,8 +52,9 @@ public class LobidResources {
 
 		@Override
 		public QueryBuilder build(final String queryString) {
-			return matchQuery(fields().get(0), lobidResourceQueryString(queryString))
-					.operator(Operator.AND);
+			final String prefix = "http://lobid.org/resource/";
+			return matchQuery(fields().get(0),
+					prefix + queryString.replace(prefix, "")).operator(Operator.AND);
 		}
 
 	}
@@ -65,7 +66,8 @@ public class LobidResources {
 
 		@Override
 		public List<String> fields() {
-			return Arrays.asList("@graph.http://purl.org/dc/terms/title.@value");
+			return Arrays.asList("@graph.http://purl.org/dc/terms/title.@value",
+					"http://purl.org/dc/terms/alternative");
 		}
 
 		@Override
@@ -86,7 +88,7 @@ public class LobidResources {
 							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForThePerson.@value",
 							"@graph.http://d-nb.info/standards/elementset/gnd#dateOfBirth.@value",
 							"@graph.http://d-nb.info/standards/elementset/gnd#dateOfDeath.@value",
-							"@graph.http://purl.org/dc/elements/1.1/creator");
+							"@graph.http://purl.org/dc/terms/creator");
 		}
 
 		@Override
@@ -126,8 +128,9 @@ public class LobidResources {
 			return Arrays.asList(/* @formatter:off*/
 					"@graph.@id", // hbz ID
 					"@graph.http://purl.org/ontology/bibo/isbn13.@value",
-					"@graph.http://purl.org/ontology/bibo/isbn10.@value",
-					"@graph.http://geni-orca.renci.org/owl/topology.owl#hasURN.@value"); /* @formatter:on */
+					"@graph.http://purl.org/ontology/bibo/isbn.@value",
+					"@graph.http://purl.org/ontology/bibo/issn.@value",
+					"@graph.http://purl.org/lobid/lv#urn.@value"); /* @formatter:on */
 		}
 
 		@Override

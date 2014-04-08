@@ -1,4 +1,4 @@
-/** Copyright 2013 hbz, Pascal Christoph.
+/** Copyright 2013,214 hbz, Pascal Christoph.
  * Licensed under the Eclipse Public License 1.0 
  **/
 package org.lobid.lodmill;
@@ -18,7 +18,7 @@ import org.xml.sax.SAXException;
 /**
  * An XML entity splitter.
  * 
- * @author Pascal Christoph
+ * @author Pascal Christoph (dr0i)
  * 
  */
 @Description("Splits all entities (aka records) residing in one XML document into multiple single XML documents.")
@@ -32,6 +32,9 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 	private boolean inEntity = false;
 	private int recordCnt = 0;
 	private String root;
+	private final static String XML_DECLARATION =
+			"<?xml version = \"1.0\" encoding = \"UTF-8\"?>";
+	private int entityDepth = 0;
 
 	/**
 	 * Sets the name of the entity. All these entities in the XML stream will be
@@ -55,8 +58,9 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 	@Override
 	public void startPrefixMapping(String prefix, String uri) throws SAXException {
 		super.startPrefixMapping(prefix, uri);
-		if (!prefix.isEmpty() && uri != null)
+		if (!prefix.isEmpty() && uri != null) {
 			namespaces.add(" xmlns:" + prefix + "=\"" + uri + "\"");
+		}
 	}
 
 	@Override
@@ -68,10 +72,15 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 				getReceiver().startRecord(String.valueOf(this.recordCnt++));
 				inEntity = true;
 				appendValuesToEntity(qName, attributes);
+				entityDepth++;
 			} else if (this.root == null)
 				this.root = qName;
-		} else
+		} else {
+			if (entity.equals(localName)) {
+				entityDepth++;
+			}
 			appendValuesToEntity(qName, attributes);
+		}
 	}
 
 	private void appendValuesToEntity(final String qName,
@@ -83,6 +92,7 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 						+ StringEscapeUtils.escapeXml(attributes.getValue(i)) + "\"");
 			}
 		}
+
 		builder.append(">");
 	}
 
@@ -92,18 +102,22 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 		if (inEntity) {
 			builder.append("</" + qName + ">");
 			if (entity.equals(localName)) {
-				StringBuilder sb = new StringBuilder("<" + this.root);
-				if (namespaces != null) {
-					for (String ns : namespaces) {
-						sb.append(ns);
+				if (entityDepth <= 1) {
+					StringBuilder sb =
+							new StringBuilder(XML_DECLARATION + "<" + this.root);
+					if (namespaces != null) {
+						for (String ns : namespaces) {
+							sb.append(ns);
+						}
+						sb.append(">");
 					}
-					sb.append(">");
+					builder.insert(0, sb.toString()).append("</" + this.root + ">");
+					getReceiver().literal("entity", builder.toString());
+					getReceiver().endRecord();
+					reset();
+					return;
 				}
-				builder.insert(0, sb.toString()).append("</" + this.root + ">");
-				getReceiver().literal("entity", builder.toString());
-				getReceiver().endRecord();
-				inEntity = false;
-				builder = new StringBuilder();
+				entityDepth--;
 			}
 		}
 	}
@@ -111,7 +125,32 @@ public final class XmlEntitySplitter extends DefaultXmlPipe<StreamReceiver> {
 	@Override
 	public void characters(final char[] chars, final int start, final int length)
 			throws SAXException {
-		builder.append(StringEscapeUtils
-				.escapeXml(new String(chars, start, length)));
+		try {
+			builder.append(StringEscapeUtils.escapeXml(new String(chars, start,
+					length)));
+		} catch (Exception e) {
+			reset();
+		}
+	}
+
+	private void reset() {
+		inEntity = false;
+		builder = new StringBuilder();
+		entityDepth = 0;
+	}
+
+	/**
+	 * Returns the XML declaration which is hard coded. @TODO change that hard
+	 * wired.
+	 * 
+	 * @return the XML decalration
+	 */
+	public static String getXmlDeclaration() {
+		return XML_DECLARATION;
+	}
+
+	@Override
+	public void onResetStream() {
+		reset();
 	}
 }

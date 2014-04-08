@@ -24,7 +24,6 @@ import org.culturegraph.mf.framework.annotations.Out;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.hp.hpl.jena.rdf.model.LiteralRequiredException;
 import com.hp.hpl.jena.rdf.model.Model;
 
 /**
@@ -45,7 +44,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 @In(Model.class)
 @Out(Void.class)
 public final class RdfModelFileWriter extends DefaultObjectReceiver<Model>
-		implements FilenameExtractor {
+		implements FilenameExtractor, RDFSink {
 	private static final Logger LOG = LoggerFactory
 			.getLogger(RdfModelFileWriter.class);
 
@@ -96,10 +95,7 @@ public final class RdfModelFileWriter extends DefaultObjectReceiver<Model>
 		filenameUtil.endIndex = endIndex;
 	}
 
-	/**
-	 * 
-	 * @param serialization Sets the serialization format. Default is NTriples.
-	 */
+	@Override
 	public void setSerialization(final String serialization) {
 		this.serialization = RDFLanguages.nameToLang(serialization);
 	}
@@ -112,21 +108,12 @@ public final class RdfModelFileWriter extends DefaultObjectReceiver<Model>
 					model
 							.listObjectsOfProperty(
 									model.createProperty(filenameUtil.property)).next()
-							.asLiteral().toString();
+							.toString();
 			LOG.debug("Going to store identifier=" + identifier);
 		} catch (NoSuchElementException e) {
-			LOG.warn(
-					"No identifier => cannot derive a filename for " + model.toString(),
-					e);
+			LOG.warn("No identifier => cannot derive a filename for "
+					+ model.toString());
 			return;
-		} catch (LiteralRequiredException e) {
-			LOG.warn("Identifier is a URI. Derive filename from that URI ... "
-					+ model.toString(), e);
-			identifier =
-					model
-							.listObjectsOfProperty(
-									model.createProperty(filenameUtil.property)).next()
-							.toString();
 		}
 
 		String directory = identifier;
@@ -139,8 +126,7 @@ public final class RdfModelFileWriter extends DefaultObjectReceiver<Model>
 						filenameUtil.target,
 						FilenameUtils.concat(directory + File.separator, identifier + "."
 								+ filenameUtil.fileSuffix));
-
-		LOG.info("Write to " + file);
+		LOG.debug("Write to " + file);
 		ensurePathExists(file);
 
 		try {
@@ -149,7 +135,6 @@ public final class RdfModelFileWriter extends DefaultObjectReceiver<Model>
 							filenameUtil.encoding);
 			final StringWriter tripleWriter = new StringWriter();
 			RDFDataMgr.write(tripleWriter, model, this.serialization);
-			tripleWriter.toString();
 			IOUtils.write(tripleWriter.toString(), writer);
 			writer.close();
 		} catch (IOException e) {

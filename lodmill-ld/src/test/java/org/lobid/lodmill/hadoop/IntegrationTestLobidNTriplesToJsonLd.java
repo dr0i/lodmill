@@ -86,8 +86,8 @@ public class IntegrationTestLobidNTriplesToJsonLd extends
 		assertTrue("Expect resolved funder type",
 				result.contains("Corporate Body or Foundation under Private Law"));
 		assertTrue("Expect resolved stock size", result.contains("10,001 - 30,000"));
-		assertTrue("Expect resolved type triple for location",
-				result.contains("wgs84_pos#SpatialThing"));
+		assertTrue("Expect resolved type triple for location is not included",
+				!result.contains("wgs84_pos#SpatialThing"));
 		assertTrue("Expect resolved contributor name",
 				result.contains("Zayer, Eric"));
 		assertFalse("Unresolved blank node should be filtered",
@@ -96,11 +96,15 @@ public class IntegrationTestLobidNTriplesToJsonLd extends
 
 	private Job createJob() throws IOException {
 		final JobConf conf = createJobConf();
+		final String mapFileName = CollectSubjects.mapFileName("testing");
 		conf.setStrings("mapred.textoutputformat.separator", " ");
 		conf.setStrings(CollectSubjects.PREFIX_KEY, "http://lobid.org/organisation");
+		conf.set(NTriplesToJsonLd.INDEX_NAME, "lobid-resources");
+		conf.set(NTriplesToJsonLd.INDEX_TYPE, "json-ld-lobid");
+		conf.setStrings("map.file.name", mapFileName);
 		final URI zippedMapFile =
 				CollectSubjects.asZippedMapFile(hdfs, new Path(HDFS_IN_SUBJECTS),
-						new Path(HDFS_OUT_ZIP + "/" + CollectSubjects.MAP_FILE_ZIP));
+						new Path(HDFS_OUT_ZIP + "/" + mapFileName + ".zip"), conf);
 		DistributedCache.addCacheFile(zippedMapFile, conf);
 		final Job job = new Job(conf);
 		job.setJobName("IntegrationTestLobidNTriplesToJsonLd");

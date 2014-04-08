@@ -2,20 +2,33 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
+# NWBib
+
+-> / nwbib.Routes
+
+# OER
+
+-> / oer.Routes
+
 # Home page
 GET     /                           controllers.Application.index()
+GET     /api                        controllers.Application.api()
+GET     /contact                    controllers.Application.contact()
+GET     /about                      controllers.Application.about()
 
-# Map static resources from the /public folder to the /assets URL path
+# Map static resources from the /public folder to the /assets and /images URL paths
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /images/*file               controllers.Assets.at(path="/public/images", file)
 
 # Map JSON-LD context documents from the /public/contexts folder to the /contect URL path
 GET     /context/:file              controllers.Assets.at(path="/public/contexts", file)
 
 # Individual, specialized API routes for different resource types
-GET     /resource                   controllers.Api.resource(id ?= "", q ?= "", name ?= "", author ?= "", subject ?= "", set ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50)
-GET     /item                       controllers.Api.item(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50)
-GET     /organisation               controllers.Api.organisation(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50)
-GET     /person                     controllers.Api.person(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50)
+GET     /resource                   controllers.Api.resource(id ?= "", q ?= "", name ?= "", author ?= "", subject ?= "", set ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50, owner ?= "", t ?= "")
+GET     /item                       controllers.Api.item(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50, t ?= "")
+GET     /organisation               controllers.Api.organisation(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50, t ?= "")
+GET     /person                     controllers.Api.person(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50, t ?= "")
+GET     /subject                    controllers.Api.subject(id ?= "", q ?= "", name ?= "", format ?= "negotiate", from: Int ?= 0, size: Int ?= 50, t ?= "")
 
 # Path-style routes and `about` redirects
 GET     /resource/:id               controllers.Path.resource(id, format ?= "negotiate", from: Int ?= 0, size: Int ?= 50)

@@ -3,6 +3,7 @@
 package models.queries;
 
 import static java.net.URLEncoder.encode;
+import static org.elasticsearch.index.query.QueryBuilders.hasChildQuery;
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
 
 import java.io.UnsupportedEncodingException;
@@ -10,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.MatchQueryBuilder.Operator;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
@@ -56,7 +58,7 @@ public class LobidItems {
 			try {
 				/*
 				 * The Lobid item IDs contain escaped entities, so we need to URL encode
-				 * the ID. In particular, spaces are encode with '+', not '%2B', so we
+				 * the ID. In particular, spaces are encoded with '+', not '%2B', so we
 				 * take care of that, too:
 				 */
 				final String encodedShortId =
@@ -86,6 +88,29 @@ public class LobidItems {
 			return matchQuery(fields().get(0), queryString).operator(Operator.AND);
 		}
 
+	}
+
+	/**
+	 * Query lobid items by owner, return their parents (which are resources).
+	 */
+	public static class OwnerQuery extends AbstractIndexQuery {
+
+		@Override
+		public List<String> fields() {
+			return Arrays.asList("@graph.http://purl.org/vocab/frbr/core#owner.@id");
+		}
+
+		@Override
+		public QueryBuilder build(final String queryString) {
+			final String[] owners = queryString.split(",");
+			final String prefix = "http://lobid.org/organisation/";
+			BoolQueryBuilder itemQuery = QueryBuilders.boolQuery();
+			for (String owner : owners) {
+				final String ownerId = prefix + owner.replace(prefix, "");
+				itemQuery = itemQuery.should(matchQuery(fields().get(0), ownerId));
+			}
+			return hasChildQuery("json-ld-lobid-item", itemQuery);
+		}
 	}
 
 }

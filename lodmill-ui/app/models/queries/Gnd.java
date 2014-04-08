@@ -2,8 +2,8 @@
 
 package models.queries;
 
-import static org.elasticsearch.index.query.QueryBuilders.boolQuery;
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
+import static org.elasticsearch.index.query.QueryBuilders.multiMatchQuery;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,17 +26,17 @@ public class Gnd {
 	public static class AllFieldsQuery extends AbstractIndexQuery {
 		@Override
 		public List<String> fields() {
-			final List<String> suggestFields =
-					new ArrayList<>(new NameQuery().fields());
-			final List<String> searchFields = Arrays.asList("_all");
-			suggestFields.addAll(searchFields);
+			final List<String> suggestFields = new ArrayList<>();
+			suggestFields.addAll(new PersonNameQuery().fields());
+			suggestFields.addAll(new SubjectNameQuery().fields());
+			suggestFields.addAll(Arrays.asList("_all"));
 			return suggestFields;
 		}
 
 		@Override
 		public QueryBuilder build(final String queryString) {
-			return NameQuery.filterUndifferentiatedPersons(QueryBuilders.queryString(
-					queryString).field(fields().get(fields().size() - 1)));
+			return QueryBuilders.queryString(queryString).field(
+					fields().get(fields().size() - 1));
 		}
 	}
 
@@ -60,7 +60,7 @@ public class Gnd {
 	/**
 	 * Query the GND index using a person's name.
 	 */
-	public static class NameQuery extends AbstractIndexQuery {
+	public static class PersonNameQuery extends AbstractIndexQuery {
 
 		@Override
 		public List<String> fields() {
@@ -74,14 +74,39 @@ public class Gnd {
 
 		@Override
 		public QueryBuilder build(final String queryString) {
-			return filterUndifferentiatedPersons(searchAuthor(queryString));
+			return searchAuthor(queryString);
+		}
+	}
+
+	/**
+	 * Query the GND index using a subject's name.
+	 */
+	public static class SubjectNameQuery extends AbstractIndexQuery {
+
+		@Override
+		public List<String> fields() {
+			return Arrays
+					.asList(
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForThePerson.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForThePerson.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForTheConferenceOrEvent.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForTheConferenceOrEvent.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForTheCorporateBody.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForTheCorporateBody.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForTheFamily.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForTheFamily.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForTheSubjectHeading.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForTheSubjectHeading.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#preferredNameForTheWork.@value",
+							"@graph.http://d-nb.info/standards/elementset/gnd#variantNameForTheWork.@value");
 		}
 
-		static QueryBuilder filterUndifferentiatedPersons(final QueryBuilder query) {
-			return boolQuery().must(query).must(
-					matchQuery("@graph.@type",
-							"http://d-nb.info/standards/elementset/gnd#DifferentiatedPerson")
-							.operator(Operator.AND));
+		@Override
+		public QueryBuilder build(final String queryString) {
+			return multiMatchQuery(queryString, fields().toArray(new String[] {}))
+					.operator(Operator.AND);
 		}
 
 	}

@@ -32,7 +32,7 @@ public final class UnitTestCollectSubjects {
 	private static final String LOBID_ID_GND =
 			"http://lobid.org/resource/HT000000716";
 	private static final String LOBID_TRIPLE_GND = "<" + LOBID_ID_GND + "> "
-			+ "<http://purl.org/dc/elements/1.1/creator>" + "<" + GND_ID + ">.";
+			+ "<http://purl.org/dc/terms/creator>" + "<" + GND_ID + ">.";
 	private static final String LOBID_ID_DEWEY =
 			"http://lobid.org/resource/HT007307035";
 	private static final String DEWEY_ID_PLAIN = "http://dewey.info/class/325/";
@@ -59,9 +59,10 @@ public final class UnitTestCollectSubjects {
 	@SuppressWarnings("static-method")
 	@Test
 	public void testProperties() {
-		assertEquals("number of entries to resolve", 7,
+		assertEquals("number of entries to resolve", 11,
 				CollectSubjects.TO_RESOLVE.size());
-		assertEquals("number of predicates", 11, CollectSubjects.PREDICATES.size());
+		assertEquals("number of predicates", 18, CollectSubjects.PREDICATES.size());
+		assertEquals("number of parents", 1, CollectSubjects.PARENTS.size());
 	}
 
 	@Test

@@ -10,6 +10,8 @@ import org.culturegraph.mf.framework.ObjectReceiver;
 import org.culturegraph.mf.framework.annotations.Description;
 import org.culturegraph.mf.framework.annotations.In;
 import org.culturegraph.mf.framework.annotations.Out;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -27,9 +29,10 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 @Out(Model.class)
 public class Triples2RdfModel extends
 		DefaultObjectPipe<String, ObjectReceiver<Model>> {
-	Model model;
 	private int count = 0;
 	private String serialization = "TURTLE";
+	private static final Logger LOG = LoggerFactory
+			.getLogger(Triples2RdfModel.class);
 
 	/**
 	 * Sets the serialization format of the incoming triples .
@@ -44,9 +47,12 @@ public class Triples2RdfModel extends
 
 	@Override
 	public void process(final String str) {
-		model = ModelFactory.createDefaultModel();
-		model.read(new StringReader(str), "test:uri:" + count, serialization);
-		getReceiver().process(model);
+		Model model = ModelFactory.createDefaultModel();
+		try {
+			model.read(new StringReader(str), "test:uri:" + count++, serialization);
+			getReceiver().process(model);
+		} catch (Exception e) {
+			LOG.error("Exception in " + str, e);
+		}
 	}
-
 }
